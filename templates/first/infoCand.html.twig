@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h2 align="center">Candidat : {{cand.id}}</h2>
+Nom : {{cand.nom}} <br>
+Prénom : {{cand.prenom}}<br>
+mail : {{cand.mail}}<br>
+photo : <img src="{{ asset(cand.photo) }}"/>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+
+<link rel="stylesheet" type = "text/css" href = "{{ asset('css/style.css') }}" />
+
+{% endblock %}
+
+{% block body %}
+
+<h1 align = center>Hello Twig</h1>
+
+<h2> Formation : {{formation}}</h2>
+
+<h2> Formateur : {{formateur}}</h2>
+
+<h2> Liste d'inscrits : </h2>
+
+{#<ul>
+{% if Candidats %}
+    {% for candidat in Candidats %}
+        <li> {{ candidat.mail }} </li>
+    {% endfor %}
+{% else %}
+    <h2> Aucune inscription pour l'instant </h2>
+{% endif %}
+</ul>
+#}
+<table border=4>
+   <thead>
+        <tr>
+            <th>Identifiant</th><th>Nom</th><th>Prenom</th><th>Mail</th>
+        </tr>
+    </thead>
+        {% if Candidats %}
+            <tbody>
+                {% for candidat in Candidats %}
+                    <tr>
+                        <td align=center><a href="{{path('first_controller_infoCand_route',{id:candidat.id})}}">{{ candidat.id }}</a></td><td>{{ candidat.nom }}</td><td>{{ candidat.prenom }}</td><td>{{ candidat.mail }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        {% else %}
+            <h2> Aucune inscription pour l'instant </h2>
+        {% endif %}
+
+
+
+
+pour plus de détails, cliquez <a href="{{path('first_controller_description_route')}}">ici</a>
+
+{% endblock %}

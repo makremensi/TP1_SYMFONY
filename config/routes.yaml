@@ -1,0 +1,15 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+first_controller_userid_route:
+    path: /first/userid
+    controller: App\Controller\FirstController::userID
+first_controller_info_route:
+    path: /first/{formation}/{formateur}
+    controller: App\Controller\FirstController::info
+first_controller_description_route:    
+    path: /first/description    
+    controller: App\Controller\FirstController::description
+first_controller_infoCand_route:
+    path: /first/{id}
+    controller: App\Controller\FirstController::infoCandidat
